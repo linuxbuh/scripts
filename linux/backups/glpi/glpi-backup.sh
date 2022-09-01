@@ -15,7 +15,8 @@ TODAY=`date +"%d%b%Y"`
 ################## Update below values ########################
 
 BACKUP_PATH='/opt/backup/glpi'
-GLPI_PATH=''
+SITE=''
+GLPI_PATH=/var/www/${SITE}
 MYSQL_HOST='localhost'
 MYSQL_PORT='3306'
 MYSQL_USER=''
@@ -28,9 +29,9 @@ BACKUP_RETAIN_DAYS=30 ## Number of days to keep local backup copy
 ##### Backups files #####
 
 mkdir -p ${BACKUP_PATH}
-mkdir -p ${BACKUP_PATH}/www
+mkdir -p ${BACKUP_PATH}/${TODAY}/www
 
-cp -f -R $GLPI_PATH/* ${BACKUP_PATH}/${TODAY}/www/
+tar -cvzf ${BACKUP_PATH}/${TODAY}/${SITE}-${TODAY}.tgz ${GLPI_PATH}
 
 
 if [ $? -eq 0 ]; then
