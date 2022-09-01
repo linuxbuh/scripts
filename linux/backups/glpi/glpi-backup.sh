@@ -30,7 +30,7 @@ BACKUP_RETAIN_DAYS=30 ## Number of days to keep local backup copy
 mkdir -p ${BACKUP_PATH}
 mkdir -p ${BACKUP_PATH}/www
 
-cp -f -R $GLPI_PATH/* ${BACKUP_PATH}/${TODAY}/www
+cp -f -R $GLPI_PATH/* ${BACKUP_PATH}/${TODAY}/www/
 
 
 if [ $? -eq 0 ]; then
