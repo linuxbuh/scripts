@@ -14,7 +14,7 @@ TODAY=`date +"%d%b%Y"`
 ################################################################
 ################## Update below values ########################
 
-BACKUP_PATH='/opt/backup/zabbix-server'
+BACKUP_PATH='/opt/backup/glpi'
 MYSQL_HOST='localhost'
 MYSQL_PORT='3306'
 MYSQL_USER='dbuzabbix'
